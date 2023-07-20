@@ -1,6 +1,7 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import autoprefixer from 'autoprefixer';
 import { defineConfig } from 'vitest/config';
+import tailwindcss from 'tailwindcss';
 
 export default defineConfig({
 	plugins: [sveltekit()],
@@ -10,6 +11,7 @@ export default defineConfig({
 	css: {
 		postcss: {
 			plugins: [
+				tailwindcss(),
 				autoprefixer()
 			]
 		}
