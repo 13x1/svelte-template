@@ -7,7 +7,8 @@ const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: [vitePreprocess(), preprocess({
-        postcss: true
+        postcss: true,
+		sass: false, // no clue why, but sass doesn't work otherwise
     })],
 
 	kit: {
