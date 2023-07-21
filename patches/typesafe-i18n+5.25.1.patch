@@ -1,0 +1,13 @@
+diff --git a/node_modules/typesafe-i18n/cli/typesafe-i18n.mjs b/node_modules/typesafe-i18n/cli/typesafe-i18n.mjs
+index 736b818..ae01968 100644
+--- a/node_modules/typesafe-i18n/cli/typesafe-i18n.mjs
++++ b/node_modules/typesafe-i18n/cli/typesafe-i18n.mjs
+@@ -22229,7 +22229,7 @@ var import_typesafe_utils11 = __toESM(require_cjs(), 1);
+ 
+ // ../generator/src/files/generate-types/jsdoc.mts
+ var import_typesafe_utils10 = __toESM(require_cjs(), 1);
+-var addNonBreakingSpaceBetweenCharacters = (value) => value.split("").join("\u200B");
++var addNonBreakingSpaceBetweenCharacters = (value) => value.split("").join("");
+ var sanitizeText = (text) => text.replace(/\*\//g, "*\\/");
+ var createJsDocsString = ({ text, types, pluralOnlyArgs } = {}, renderTypes = false, renderPluralOnlyArgs = true, renderNonBreakingSpaceBetweenCharacters = false) => {
+   const renderedTypes = renderTypes ? `${Object.entries(types || {}).filter(({ "0": key }) => renderPluralOnlyArgs || !pluralOnlyArgs.includes(key)).sort((0, import_typesafe_utils10.sortStringPropertyASC)("0")).map(createJsDocsParamString).join("")}` : "";

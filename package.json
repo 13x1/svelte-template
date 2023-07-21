@@ -14,7 +14,8 @@
         "test:coverage": "vitest --run --coverage",
         "lint": "prettier --check . && eslint .",
         "format": "prettier --write .",
-        "typesafe-i18n": "typesafe-i18n"
+        "i18n": "typesafe-i18n",
+        "postinstall": "patch-package"
     },
     "devDependencies": {
         "@playwright/test": "^1.36.1",
@@ -30,6 +31,7 @@
         "eslint": "^8.45.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-svelte3": "^4.0.0",
+        "patch-package": "^7.0.2",
         "postcss": "^8.4.27",
         "postcss-load-config": "^4.0.1",
         "prettier": "^3.0.0",
