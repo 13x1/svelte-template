@@ -14,6 +14,7 @@ This is my personal template for [Svelte/SvelteKit](https://svelte.dev) projects
 -   CSS preprocessor: [PostCSS](https://postcss.org) & [Autoprefixer](https://autoprefixer.github.io)
 -   CSS language: [Sass/SCSS](https://sass-lang.com)
 -   Env vars: [SvelteKit's $env](https://kit.svelte.dev/docs/modules#$env-dynamic-private)
+-   i18n: [typesafe-i18n](https://github.com/ivanhofer/typesafe-i18n) + a custom SSR-compatible adapter
 
 ## Command to use
 
