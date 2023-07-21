@@ -1,4 +1,4 @@
-import preprocess from "svelte-preprocess";
+import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
@@ -6,10 +6,13 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
-	preprocess: [vitePreprocess(), preprocess({
-        postcss: true,
-		sass: false, // no clue why, but sass doesn't work otherwise
-    })],
+	preprocess: [
+		vitePreprocess(),
+		preprocess({
+			postcss: true,
+			sass: false // no clue why, but sass doesn't work otherwise
+		})
+	],
 
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
