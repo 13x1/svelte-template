@@ -1,24 +1,24 @@
 import type { HandleClientError } from '@sveltejs/kit';
 
+// Helpers
+
+const errToStr = (err: unknown) => (err instanceof Error ? err.message : JSON.stringify(err));
+
 // Loading/rendering error handling
 
 export const handleError = (async ({ error }) => {
     return {
-        message: 'Whoops! Something went wrong: ' + (error instanceof Error ? error.message : error)
+        message: 'Whoops! Something went wrong: ' + errToStr(error)
     };
 }) satisfies HandleClientError;
 
 // Runtime error handling (not SK native)
 
 const handleRuntimeError = (error: unknown) => {
-    alert('Whoops! Something went wrong: ' + (error instanceof Error ? error.message : error));
+    alert('Whoops! Something went wrong: ' + errToStr(error));
 };
 
 // Register runtime error handlers
 
-addEventListener('unhandledrejection', async (ev: PromiseRejectionEvent) => {
-    handleRuntimeError(ev.reason);
-});
-addEventListener('error', (ev: ErrorEvent) => {
-    handleRuntimeError(ev.error);
-});
+addEventListener('unhandledrejection', ev => handleRuntimeError(ev.reason));
+addEventListener('error', ev => handleRuntimeError(ev.error));
