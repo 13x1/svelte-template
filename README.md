@@ -1,38 +1,28 @@
-# create-svelte
+# svelte-template
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is my personal template for [Svelte/SvelteKit](https://svelte.dev) projects. It is very opinionated and might not be your taste, but feel free to fork it and make it your own :3
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+-   Framework: [Svelte](https://svelte.dev) & [SvelteKit](https://kit.svelte.dev)
+-   Language: [TypeScript](https://www.typescriptlang.org)
+-   Linter: [ESLint](https://eslint.org)
+-   Formatter: [Prettier](https://prettier.io)
+-   Unit testing: [Vitest](https://vitest.dev)
+-   E2E testing: [Playwright](https://playwright.dev)
+-   Inline CSS: [TailwindCSS](https://tailwindcss.com) & [Typography](https://tailwindcss.com/docs/typography-plugin)
+-   CSS preprocessor: [PostCSS](https://postcss.org) & [Autoprefixer](https://autoprefixer.github.io)
+-   CSS language: [Sass/SCSS](https://sass-lang.com)
+-   Env vars: [SvelteKit's $env](https://kit.svelte.dev/docs/modules#$env-dynamic-private)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
+## Command to use
 
 ```bash
-npm run build
+read -p "Project name: " project_name
+git clone https://github.com/13x1/$project_name
+cd $project_name
+sed -i "s/svelte-template/$project_name/g" package.json
+npm install
+git add -A
+git commit -m "Use template for $project_name"
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
