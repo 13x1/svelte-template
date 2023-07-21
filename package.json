@@ -13,7 +13,8 @@
         "test:unit": "vitest --run",
         "test:coverage": "vitest --run --coverage",
         "lint": "prettier --check . && eslint .",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "typesafe-i18n": "typesafe-i18n"
     },
     "devDependencies": {
         "@playwright/test": "^1.36.1",
@@ -42,5 +43,8 @@
         "vite": "^4.4.6",
         "vitest": "^0.33.0"
     },
-    "type": "module"
+    "type": "module",
+    "dependencies": {
+        "typesafe-i18n": "^5.25.1"
+    }
 }
