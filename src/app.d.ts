@@ -1,9 +1,12 @@
-// See https://kit.svelte.dev/docs/types#app
-// for information about these interfaces
+import type { Locale } from './i18n/i18n.js';
+
 declare global {
     namespace App {
         // interface Error {}
-        // interface Locals {}
+        interface Locals {
+            requestLocale: Locale;
+        }
+
         // interface PageData {}
         // interface Platform {}
     }
