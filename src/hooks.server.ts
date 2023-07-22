@@ -19,7 +19,16 @@ export const handleFetch = (async ({ request, fetch }) => {
 
 // Rendering error handling
 
-export const handleError = (async () => {
+export const handleError = (async ({ event, error }) => {
+    console.error(
+        `SvelteKit ran into an uncaught error while rendering the page ${event.request.url}:`
+    );
+    console.error(error);
+    console.error(
+        event?.url?.searchParams?.get('logEvent') === 'true'
+            ? event
+            : 'Append `?logEvent=true` to the URL to see the full event details.'
+    );
     return {
         message: 'Whoops! Something went wrong.'
     };
