@@ -19,10 +19,29 @@ This is my personal template for [Svelte/SvelteKit](https://svelte.dev) projects
 ## Command to use
 
 ```bash
-read -p "Project name: " project_name
-git clone https://github.com/13x1/$project_name
+echo -n 'Project name: '
+read project_name
+git clone https://github.com/13x1/svelte-template.git $project_name
 cd $project_name
-sed -i "s/svelte-template/$project_name/g" package.json
+git remote rename origin template
+sed -i "s/svelte-template/$project_name/g" package*.json
+rm README.md
+echo -e "# $project_name\n\nInitialized with
+[svelte-template](https://github.com/13x1/svelte-template)" > README.md
+npm install
+git add -A
+git commit -m "Use template for $project_name"
+```
+
+Or, if you already cloned the template:
+
+```bash
+project_name=$(basename $(pwd))
+git remote add template https://github.com/13x1/svelte-template
+sed -i "s/svelte-template/$project_name/g" package*.json
+rm README.md
+echo -e "# $project_name\n\nInitialized with
+[svelte-template](https://github.com/13x1/svelte-template)" > README.md
 npm install
 git add -A
 git commit -m "Use template for $project_name"
