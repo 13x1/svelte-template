@@ -18,7 +18,7 @@ export function findRequestLocale(event: RequestEvent): Locale {
     const lang = maybeLang as Locale;
 
     // set cookie
-    event.cookies.set(cookieName, lang);
+    event.cookies.set(cookieName, lang, {httpOnly: false, maxAge: 31536000});
 
     // set on locals
     event.locals.requestLocale = lang;
